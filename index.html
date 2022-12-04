@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluid simulator</title>
+    <link rel="stylesheet" href="base.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  
+    <style>
+        .timer{
+            text-align: center;
+            padding-top: 250px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="timer" onload="timer(1800)">
+        <div><h1>Fluid-simulator</h1></div>
+        <div class="time">
+          <strong class="cc">Your stress releaser opens in:<span id="time">Loading...</span></strong>
+        </div>
+      </div>
+
+
+    <script>
+        var time = 5;
+setInterval(function() {
+  var seconds = time % 60;
+  var minutes = (time - seconds) / 60;
+  if (seconds.toString().length == 1) {
+    seconds = "0" + seconds;
+  }
+  if (minutes.toString().length == 1) {
+    minutes = "0" + minutes;
+  }
+  document.getElementById("time").innerHTML = minutes + ":" + seconds;
+  time--;
+  if (time == 0) {
+    window.location.href = "base.html";
+  }
+}, 1000);
+
+    </script>
+</body>
+</html>
